@@ -729,11 +729,9 @@
     </section>
 
     <!-- Scroll To Top -->
-    <button class="z-10 fixed bottom-6 right-6
-         w-14 h-14 rounded-full
-         bg-white/10 text-white
-         flex items-center justify-center
-         cursor-pointer
+    <button class=" hidden md:inline-flex z-10 fixed bottom-6 right-6
+         w-14 h-14 rounded-full bg-white/10 text-white
+         flex items-center justify-center cursor-pointer
          transition-all duration-300" onclick="scrollToTop()">
         ↑
     </button>
@@ -744,7 +742,6 @@
     <script>
 
         const header = document.getElementById("siteHeader");
-
         let lastScrollY = window.scrollY;
 
         window.addEventListener("scroll", () => {
