@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Header</title>
+
+    <!-- Google Font (Roboto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body class="font-[Inter] text-white bg-[#090f20]">
+
+    <!-- HEADER -->
+    <header id="siteHeader" class="fixed top-0 left-0 w-full z-50
+         transition-transform duration-300 ease-in-out">
+        <nav class="flex items-center justify-between px-5 md:px-12 py-4
+            bg-white/10 backdrop-blur-lg border-b border-white/20">
+
+            <!-- Logo -->
+            <div class="nav-link text-2xl font-bold cursor-pointer" onclick="scrollToTop()">
+                Ritesh<span class="text-lime-400"> Verma</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center gap-6 bg-white/5 px-2 py-2 rounded-full text-sm">
+                <li class="items-center bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 cursor-pointer border border-white/20"
+                    onclick="scrollToAbout()">
+                    About Me</li>
+                <li class="items-center bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 cursor-pointer border border-white/20"
+                    onclick="scrollToProjects()">
+                    Projects</li>
+                <li class="items-center bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 cursor-pointer border border-white/20"
+                    onclick="scrollToSkills()">
+                    Skills</li>
+            </ul>
+
+            <!-- Desktop Buttons -->
+            <div class="hidden md:flex items-center gap-3 bg-white/5 px-2 py-2 rounded-full text-sm">
+                <button class="px-4 py-2 rounded-full border border-lime-400 
+                   bg-lime-400/20 hover:bg-lime-400 hover:text-black" onclick="scrollToContact()">
+                    Contact
+                </button>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+        </nav>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="md:hidden bg-white/10 backdrop-blur-xl border-b border-white/20
+            transition-all duration-300 ease-out opacity-0 -translate-y-4 pointer-events-none">
+            <ul class="flex flex-col gap-6 px-6 py-6 text-center text-lg">
+                <li class="nav-link hover:bg-white/20 cursor-pointer" onclick="scrollToAbout()">About Me</li>
+                <li class="nav-link hover:bg-white/20 cursor-pointer" onclick="scrollToProjects()">Projects</li>
+                <li class="nav-link hover:bg-white/20 cursor-pointer" onclick="scrollToSkills()">Skills</li>
+                <div class="flex flex-col gap-3 pt-4">
+                    <button class="nav-link py-2 rounded-full border border-lime-400 
+                bg-lime-400/20 hover:bg-lime-400 hover:text-black" onclick="scrollToContact()">
+                        Contact
+                    </button>
+                </div>
+
+            </ul>
+        </div>
+
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-24 md:pt-60
+        bg-[url('images/hero.png')]
+        bg-cover bg-center overflow-hidden">
+
+        <!-- UPDATED GRADIENT OVERLAY -->
+        <div id="heroOverlay" class="absolute inset-0 pointer-events-none">
+
+            <!-- RIGHT SIDE DARK GRADIENT -->
+            <div class="absolute top-0 left-0 h-full w-[55%]
+                        bg-gradient-to-r
+                        from-[#050b14]/90
+                        via-[#0b1c2d]/70
+                        to-transparent">
+            </div>
+
+            <!-- BOTTOM DARK NAVY GRADIENT -->
+            <div class="absolute bottom-0 left-0 w-full h-[45%]
+                        bg-gradient-to-t
+                        from-[#050b14]/95
+                        via-[#050b14]/70
+                        to-transparent">
+            </div>
+
+        </div>
+
+        <!-- CONTENT -->
+        <div id="heroContent" class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <!-- LEFT CONTENT -->
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                        <span class="text-lime-400">Ritesh Verma</span><br>
+                        <span class="text-2xl md:text-4xl font-bold leading-tight">
+                            Engineering Intern | Frontend / MERN Aspirant
+                        </span>
+                    </h1>
+
+                    <div class="flex gap-4 mt-8 flex-wrap">
+                        <button class="flex items-center gap-2 px-4 py-2 rounded-full
+                            bg-white/10 border border-white/20
+                            hover:bg-white/20 transition" onclick="scrollToContact()">
+                            Contact Me →
+                        </button>
+
+                        <a href="https://github.com/Riteshverma-codes/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black transition">
+                            View GitHub ⤢
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT CONTENT -->
+                <!-- <div   
+                    <div class="flex gap-12 mb-6">
+                        <div>
+                            <h3 class="text-4xl font-bold">92%</h3>
+                            <p class="uppercase text-xs tracking-widest text-white/60">
+                                Placement Success
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-4xl font-bold">14</h3>
+                            <p class="uppercase text-xs tracking-widest text-white/60">
+                                Days to Shortlist
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="max-w-lg text-white/75 leading-relaxed">
+                        Partner with us for fewer interviews and stronger hires.
+                        Our focus is on roles where technical depth creates a
+                        competitive advantage. Every placement aligns with your
+                        roadmap so the team you hire today drives the metrics
+                        that matter next quarter.
+                    </p </div>
+
+                </div> -->
+            </div>
+    </section>
+
+
+    <!-- Professional Summary Section -->
+    <section id="summary" class="bg-[#090f20] py-12 md:py-24 relative">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+            <!-- Image -->
+            <div class="flex justify-center reveal">
+                <img src="/images/pic.jpg" alt="Professional Summary"
+                    class="w-72 h-72 md:w-96 md:h-96 object-cover rounded-2xl" />
+            </div>
+
+            <!-- Text -->
+            <div class="reveal">
+                <h2 class="text-3xl md:text-5xl font-semibold text-blue-500 mb-6">
+                    Professional Summary
+                </h2>
+
+                <p class="text-gray-400 text-sm md:text-lg text-justify mb-6">
+                    Software Engineering aspirant with hands-on experience in building responsive, user-centric web
+                    applications using
+                    React, Next.js, JavaScript, and modern CSS frameworks. Currently undergoing MERN Stack training at
+                    DUCAT India,
+                    working with MongoDB, reusable components, API integration, and scalable frontend architecture.
+                </p>
+
+                <p class="text-gray-500 text-sm md:text-lg text-base text-justify leading-relaxed">
+                    With prior experience as a Graphic & UI Designer, I bring strong UI/UX understanding combined with
+                    clean, maintainable code. Passionate about problem-solving, learning, and building real-world
+                    products.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Project Section  -->
+    <section id="projects" class="bg-[#020617] text-white py-12 md:py-24 z-10 relative">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Section Title -->
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-5xl font-semibold">Selected Projects</h2>
+                <p class="text:sm md:text-lg text-gray-600 mt-3 max-w-xl">
+                    A collection of real-world projects showcasing my frontend and MERN stack skills.
+                </p>
+            </div>
+
+            <div class="hidden md:grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+                <!-- LEFT : PROJECT LIST -->
+                <div class="project-list">
+
+                    <a href="https://www.ugc.gov.in/" target="_blank">
+                        <div class="project-item active" data-image="images/ugc.jpg">
+                            <h3>Ugc.gov</h3>
+                            <p>Next · React · React Slick · Tailwind</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.hswf.network/" target="_blank">
+                        <div class="project-item active" data-image="images/hswf.jpg">
+                            <h3>HSWF Network</h3>
+                            <p>React · Node.js · MongoDB · Tailwind</p>
+                        </div>
+                    </a>
+
+                    <a href="">
+                        <div class="project-item" data-image="images/tournament.jpg">
+                            <h3>Tournament APP</h3>
+                            <p>React · Next.js · MongoDB · Tailwind</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.coversandall.com/" target="_blank">
+                        <div class="project-item" data-image="images/covers&all.jpg">
+                            <h3>Covers & All</h3>
+                            <p>Angular · TypeScript · Tailwind · API Call</p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- RIGHT : PREVIEW -->
+                <div class="project-preview">
+                    <img id="projectPreview" src="images/hswf.jpg" alt="Project Preview">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile View  -->
+
+        <div class="project-mobile md:hidden flex gap-4 overflow-x-auto pb-4 mx-4">
+            <a href="https://www.hswf.network/">
+                <div class="mobile-card">
+                    <img src="images/hswf.jpg">
+                    <h4>HSWF Network</h4>
+                </div>
+            </a>
+
+            <a href="https://www.coversandall.com/">
+                <div class="mobile-card">
+                    <img src="images/tournament.jpg">
+                    <h4>Tournament APP</h4>
+                </div>
+            </a>
+            <a href="https://www.hswf.network/">
+                <div class="mobile-card">
+                    <img src="images/covers&all.jpg">
+                    <h4>Covers & All</h4>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- What I Do Section -->
+    <section id="skills" class="bg-[#050a1b] py-12 md:py-24 z-10 relative">
+        <div class="max-w-7xl mx-auto px-8">
+
+
+            <!-- Heading -->
+            <div class="text-center mb-6 md:mb-12 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-semibold text-white-400 mb-2">What I do</h2>
+                <p class="text-gray-400 text-sm md:text-lg pt-5 text-center">
+                    I build modern, responsive web applications using React, Next.js, and Tailwind CSS.
+                    I focus on creating clean, maintainable code and seamless, user-friendly interfaces.
+                    Skilled in integrating APIs, managing state efficiently, and developing scalable frontend solutions.
+                    Passionate about learning, problem-solving, and building real-world products.
+                </p>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 relative flex">
+
+                <!-- Left Vertical Text -->
+                <div class="hidden md:flex items-center mr-6">
+                    <span class="rotate-[-90deg] text-gray-400 tracking-widest text-md">
+                        SKILLS
+                    </span>
+                </div>
+                <!-- Marquee Wrapper -->
+                <div class="skills-marquee md:flex">
+                    <div class="skills-track" id="skillsTrack">
+
+                        <!-- ===== SKILLS (SET 1) ===== -->
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+                            <span>HTML5</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+                            <span>CSS3</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+                            <span>React.js</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg">
+                            <span>Next.js</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg">
+                            <span>Angular</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
+                            <span>TypeScript</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+                            <span>MongoDB</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDKn3vA2YUbXzN0ZC3gALWJ08gJN-Drl15w&s">
+                            <span>Tailwind</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
+                            <span>Bootstrap</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+                            <span>Git</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+                            <span>GitHub</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
+                            <span>VS Code</span>
+                        </div>
+
+                        <!--  DUPLICATE (for infinite loop)  -->
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+                            <span>HTML5</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+                            <span>CSS3</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+                            <span>React.js</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg">
+                            <span>Next.js</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg">
+                            <span>Angular</span>
+                        </div>
+                        <div class="skill-box">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
+                            <span>TypeScript</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+                            <span>MongoDB</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDKn3vA2YUbXzN0ZC3gALWJ08gJN-Drl15w&s">
+                            <span>Tailwind</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
+                            <span>Bootstrap</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+                            <span>Git</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+                            <span>GitHub</span>
+                        </div>
+
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
+                            <span>VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Floating card || Experience Section -->
+
+    <section class="bg-[#020617] py-12 md:py-24 relative overflow-hidden z-10 relative">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Heading -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-semibold text-white mb-4">
+                    Experience
+                </h2>
+                <p class=" text:sm md:text-lg text-gray-400 max-w-3xl mx-auto">
+                    Gained hands-on experience building responsive web interfaces using React, JavaScript, and modern
+                    CSS frameworks.
+                    Worked on real-world projects involving component-based architecture, UI optimization, and API
+                    integration.
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Card 1 -->
+                <div class="floating-card">
+                    <span class="badge text-sm">Jan 2025 - Present</span>
+                    <h3>Ducat India</h3>
+                    <span class="text-sm">Vikaspuri, Delhi | MERN Stack Developer (Training)</span>
+                    <ul class="text-sm list-disc text-gray-400 pt-4">
+                        <li>Undergoing professional training in MERN Stack development.</li>
+                        <li>Built React-based interfaces using reusable components and responsive layouts</li>
+                        <li>Integrated REST APIs to fetch and display dynamic data</li>
+                        <li>Gained hands-on exposure to MongoDB, working with collections and basic CRUD operations</li>
+                        <li>Used Git and GitHub for version control and collaborative development</li>
+                    </ul>
+                    <!-- <span class="footer-text">Speed & Efficiency</span> -->
+                </div>
+
+                <!-- Card 2 (Highlighted) -->
+                <div class="floating-card featured md:top-[-30px]">
+                    <span class="badge purple text-sm">Jan 2023 - Oct-2025</span>
+                    <h3>Amazin Automation Solutions Pvt. Ltd.</h3>
+                    <span class="text-sm">Gurugram, Haryana | UI & Graphic Designer</span>
+                    <ul class="text-sm list-disc text-gray-400 pt-4">
+                        <li>Undergoing professional training in MERN Stack development.</li>
+                        <li>Built React-based interfaces using reusable components and responsive layouts</li>
+                        <li>Integrated REST APIs to fetch and display dynamic data</li>
+                        <li>Gained hands-on exposure to MongoDB, working with collections and basic CRUD operations</li>
+                        <li>Used Git and GitHub for version control and collaborative development</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="floating-card">
+                    <span class="badge">Nov 2021 - Dec 2022</span>
+                    <h3>Creative Headquarter</h3>
+                    <span class="text-sm">Dwarka, Delhi | Graphic Designer</span>
+                    <ul class="text-sm list-disc text-gray-400 pt-4">
+                        <li>Undergoing professional training in MERN Stack development.</li>
+                        <li>Built React-based interfaces using reusable components and responsive layouts</li>
+                        <li>Integrated REST APIs to fetch and display dynamic data</li>
+                        <li>Gained hands-on exposure to MongoDB, working with collections and basic CRUD operations</li>
+                        <li>Used Git and GitHub for version control and collaborative development</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education and Certification -->
+
+    <section class="bg-[#050a1b] py-12 md:py-24 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <h2 class="text-3xl md:text-5xl font-semibold text-center mb-10 md:mb-20">
+                My <span class="text-blue-500">Journey</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+                <!-- ================= LEFT : EDUCATION ================= -->
+                <div class="relative">
+
+                    <h3 class="text-lg md:text-3xl font-semibold mb-5 md:mb-10">Education</h3>
+
+                    <!-- Vertical Line -->
+                    <div class="absolute left-[5px] top-20 bottom-0 w-[2px] bg-blue-500"></div>
+
+                    <!-- Item -->
+                    <div class="relative pl-10 mb-5 md:mb-10">
+                        <span class="absolute left-0 top-10 w-3 h-3 bg-blue-500 rounded-full"></span>
+
+                        <div class="border border-blue-500 rounded-lg p-3 md:p-6
+                    hover:border-blue-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.15)]
+                   hover:-translate-y-1 transition-all duration-300">
+                            <span class="text-blue-500 text-sm">2023 – Present</span>
+                            <h4 class="text-sm md:text-sm md:text-lg font-semibold mt-1">Pursuing Masters of Computer
+                                Applications</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative pl-10 mb-5 md:mb-10">
+                        <span class="absolute left-0 top-10 w-3 h-3 bg-blue-500 rounded-full"></span>
+
+                        <div class="border border-blue-500 rounded-lg p-3 md:p-6
+                    hover:border-blue-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.15)]
+                    hover:-translate-y-1 transition-all duration-300">
+                            <span class="text-blue-500 text-sm">2018 – 2021</span>
+                            <h4 class="text-sm md:text-lg font-semibold mt-1">Bachelor of Arts with Maths</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative pl-10 mb-5 md:mb-10 ">
+                        <span class="absolute left-0 top-10 w-3 h-3 bg-blue-500 rounded-full"></span>
+
+                        <div class="border border-blue-500 rounded-lg p-3 md:p-6
+                    hover:border-blue-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.15)]
+                    hover:-translate-y-1 transition-all duration-300">
+                            <span class="text-blue-500 text-sm">2017 -2018</span>
+                            <h4 class="text-sm md:text-lg font-semibold mt-1">12th from Aryan International school from
+                                CBSE board
+                            </h4>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative pl-10">
+                        <span class="absolute left-0 top-10 w-3 h-3 bg-blue-500 rounded-full"></span>
+
+                        <div class="border border-blue-500 rounded-lg p-3 md:p-6
+                    hover:border-blue-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.15)]
+                    hover:-translate-y-1 transition-all duration-300">
+                            <span class="text-blue-500 text-sm">2015 - 2016</span>
+                            <h4 class="text-sm md:text-lg font-semibold mt-1">10th from Gagan Bharti School from CBSE
+                                board</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ================= RIGHT : CERTIFICATION ================= -->
+                <div class="relative">
+
+                    <h3 class="text-sm md:text-lg md:text-3xl font-semibold mb-5 md:mb-10">Certification</h3>
+
+                    <!-- Vertical Line -->
+                    <div class="absolute left-[5px] top-20 bottom-0 w-[2px] bg-blue-500"></div>
+
+                    <!-- Item -->
+                    <div class="relative pl-10 mb-5 md:mb-10">
+                        <span class="absolute left-0 w-3 top-12 h-3 bg-blue-500 rounded-full"></span>
+
+                        <div class="border border-blue-500 rounded-lg p-3 md:p-6
+                    hover:border-blue-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.15)]
+                   hover:-translate-y-1 transition-all duration-300">
+                            <h4 class="text-sm md:text-lg font-semibold mt-1">MERN Stack Development Certification
+                                (Ongoing) -
+                                Ducat
+                                India</h4>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Hands-on training in MongoDB, Express.js, React.js, Node.js, REST APIs, Git, and
+                                full-stack application development
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="relative pl-10 mb-5 md:mb-10">
+                        <span class="absolute left-0 top-10 w-3 h-3 bg-blue-400 rounded-full"></span>
+
+                        <div class="border border-blue-500 rounded-lg p-3 md:p-6
+                   hover:border-blue-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.15)]
+                   hover:-translate-y-1 transition-all duration-300">
+                            <h4 class="text-sm md:text-lg font-semibold mt-1">Skills-for-Market Training (SMART – IT &
+                                Employability) - Tech Mahindra Foundation</h4>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Advance IT, Workplace Readiness Program (WPR), Functional English & Soft Skills
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Item -->
+                    <div class="relative pl-10">
+                        <span class="absolute left-0 top-10 w-3 h-3 bg-blue-400 rounded-full"></span>
+
+                        <div class="border border-blue-500 rounded-lg p-3 md:p-6
+                   hover:border-blue-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.15)]
+                   hover:-translate-y-1 transition-all duration-300">
+                            <h4 class="text-sm md:text-lg font-semibold mt-1"> Industrial Training – Solar Panel
+                                Installation &
+                                Maintenance - Redington Foundation (CSR Program)</h4>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Completed 4-week employability & skill development program
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-[#020617] text-white pt-20 pb-5 z-10 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-5xl font-semibold">Contact</h2>
+            </div>
+
+            <!-- TOP -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+                <!-- LEFT -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">
+                        Ritesh<span class="text-lime-400"> Verma</span>
+                    </h3>
+
+                    <p class="text-gray-400 max-w-sm mb-6">
+                        Frontend / MERN Stack Aspirant
+                    </p>
+
+                    <div class="space-y-3 text-gray-300 text-md">
+                        <p class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope"></i><span>riteshverma@gmail.com</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i><span>+91 9212230235</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="md:text-right">
+                    <h4 class="text-sm tracking-widest text-gray-400 mb-4">
+                        CONNECT
+                    </h4>
+
+                    <div class="flex md:justify-end gap-5 text-xl text-gray-400">
+                        <a href="https://www.linkedin.com/in/riteshverma-web-dev/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/riteshvermaz/" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/Riteshverma-codes/" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DIVIDER -->
+            <div class="border-t border-white/10 my-10"></div>
+
+            <!-- BOTTOM -->
+            <div class="flex flex-col md:flex-row justify-between gap-4 text-sm text-gray-500">
+                <p>© 2025 Ritesh Verma. All rights reserved.</p>
+
+                <div class="flex gap-3 md:p-6">
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Privacy</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Scroll To Top -->
+    <button class="z-10 fixed bottom-6 right-6
+         w-14 h-14 rounded-full
+         bg-white/10 text-white
+         flex items-center justify-center
+         cursor-pointer
+         transition-all duration-300" onclick="scrollToTop()">
+        ↑
+    </button>
+
+
+
+    <!-- SCRIPT -->
+    <script>
+
+        const header = document.getElementById("siteHeader");
+
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+
+            // scroll down → hide header
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                header.classList.add("-translate-y-full");
+            }
+            // scroll up → show header
+            else {
+                header.classList.remove("-translate-y-full");
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // <!-- MOBILE MENU SCRIPT -->
+
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            isMenuOpen ? closeMenu() : openMenu();
+        });
+
+        function openMenu() {
+            mobileMenu.classList.remove(
+                "opacity-0",
+                "-translate-y-4",
+                "pointer-events-none"
+            );
+            isMenuOpen = true;
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.add(
+                "opacity-0",
+                "-translate-y-4",
+                "pointer-events-none"
+            );
+            isMenuOpen = false;
+        }
+
+        // Close when clicking menu items
+        document.querySelectorAll(".nav-link").forEach(item => {
+            item.addEventListener("click", closeMenu);
+        });
+
+        // Close when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // Hero Section 
+        const hero = document.getElementById("hero");
+        const heroOverlay = document.getElementById("heroOverlay");
+        const heroContent = document.getElementById("heroContent");
+
+        window.addEventListener("scroll", () => {
+            const y = window.scrollY;
+            const fadePoint = hero.offsetHeight * 0.6;
+
+            hero.style.backgroundPositionY = `${y * 0.25}px`;
+            heroOverlay.style.transform = `translateY(${y * 0.15}px)`;
+            heroContent.style.transform = `translateY(${y * 0.08}px) scale(${Math.max(1 - y / (fadePoint * 2), 0.9)})`;
+            heroContent.style.opacity = Math.max(1 - y / fadePoint, 0);
+        });
+
+
+
+        const track = document.getElementById("skillsTrack");
+
+        let isDragging = false;
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+
+        const speed = 0.4;
+        let autoX = 0;
+        let isHovered = false;
+
+        // Pause auto scroll on hover
+        track.addEventListener("mouseenter", () => {
+            isHovered = true;
+        });
+        track.addEventListener("mouseleave", () => {
+            isHovered = false;
+        });
+
+
+        function autoScroll() {
+            if (!isDragging && !isHovered) {
+                autoX -= speed;
+                track.style.transform = `translateX(${autoX}px)`;
+
+                const halfWidth = track.scrollWidth / 2;
+                if (Math.abs(autoX) >= halfWidth) {
+                    autoX = 0;
+                }
+            }
+            requestAnimationFrame(autoScroll);
+        }
+
+        autoScroll();
+
+        function dragStart(e) {
+            isDragging = true;
+            track.classList.add("grabbing");
+            startX = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+            prevTranslate = autoX;
+        }
+
+        function dragMove(e) {
+            if (!isDragging) return;
+            const x = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+            const diff = x - startX;
+            autoX = prevTranslate + diff;
+            track.style.transform = `translateX(${autoX}px)`;
+        }
+
+        function dragEnd() {
+            isDragging = false;
+            track.classList.remove("grabbing");
+        }
+
+        track.addEventListener("mousedown", dragStart);
+        track.addEventListener("mousemove", dragMove);
+        track.addEventListener("mouseup", dragEnd);
+        track.addEventListener("mouseleave", dragEnd);
+
+        track.addEventListener("touchstart", dragStart);
+        track.addEventListener("touchmove", dragMove);
+        track.addEventListener("touchend", dragEnd);
+
+
+        // Project section
+
+        const items = document.querySelectorAll(".project-item");
+        const preview = document.getElementById("projectPreview");
+
+        items.forEach(item => {
+            item.addEventListener("mouseenter", () => {
+                items.forEach(i => i.classList.remove("active"));
+                item.classList.add("active");
+                preview.src = item.dataset.image;
+            });
+
+
+        });
+
+        function scrollToContact() {
+            document.getElementById("contact").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+        function scrollToSkills() {
+            document.getElementById("skills").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+        function scrollToProjects() {
+            document.getElementById("projects").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+        function scrollToAbout() {
+            document.getElementById("summary").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
+
+</body>
+
+</html>
